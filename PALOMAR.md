@@ -32,10 +32,14 @@ of both new endpoints and every supporting target contains only `propext`,
 The package upgrades Lean and Mathlib to 4.35.0-rc2 and exposes definition bodies
 needed by the standalone statement. Two elementary lower bounds on the
 Eisenstein weights are named lemmas to avoid unstable generated proof names.
-The original mathematical premises and conclusions are retained. The interval certificate modules have two chains of ordinary build-order
-imports, so at most two of these large modules compile at once. No certificate
-statement or proof is changed. This bounds memory use after the first full
-preflight exceeded the 16 GB worker capacity during the Solution build.
+The original mathematical premises and conclusions are retained. The Solution's 237 local dependency modules are assigned to 119 Lake library
+batches of at most two modules. Each batch uses Lake's ordinary `needs`
+dependency on the preceding batch, which Lake awaits before processing modules.
+This bounds concurrency across the entire Solution build without adding Lean
+imports or changing mathematical source. Run `python3 scripts/update_palomar_build.py`
+after changing imports to regenerate the plan. Two earlier full preflights
+exceeded the 16 GB worker capacity; limiting certificate modules alone was
+insufficient, so the final plan covers every local dependency.
 
 Challenge proof holes are deliberate and all are selected in `comparator.json`;
 the Solution provides their checked proofs. Its cache-reset commands preserve
