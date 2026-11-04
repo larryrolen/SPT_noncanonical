@@ -3,6 +3,17 @@ name: Palomar mechanical preflight
 on:
   push:
     branches: [codex/palomar-submission]
+    paths:
+      - '*.lean'
+      - '**/*.lean'
+      - 'lakefile.*'
+      - 'lake-manifest.json'
+      - 'lean-toolchain'
+      - 'comparator.json'
+      - 'formalization.yaml'
+      - 'LICENSE'
+      - 'PALOMAR.md'
+      - 'scripts/**'
   workflow_dispatch:
 
 permissions:
