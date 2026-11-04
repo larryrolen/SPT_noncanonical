@@ -32,7 +32,10 @@ of both new endpoints and every supporting target contains only `propext`,
 The package upgrades Lean and Mathlib to 4.35.0-rc2 and exposes definition bodies
 needed by the standalone statement. Two elementary lower bounds on the
 Eisenstein weights are named lemmas to avoid unstable generated proof names.
-The original mathematical premises and conclusions are retained.
+The original mathematical premises and conclusions are retained. The interval certificate modules have two chains of ordinary build-order
+imports, so at most two of these large modules compile at once. No certificate
+statement or proof is changed. This bounds memory use after the first full
+preflight exceeded the 16 GB worker capacity during the Solution build.
 
 Challenge proof holes are deliberate and all are selected in `comparator.json`;
 the Solution provides their checked proofs. Its cache-reset commands preserve

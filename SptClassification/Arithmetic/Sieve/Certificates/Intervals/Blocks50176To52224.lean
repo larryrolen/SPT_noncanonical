@@ -4,6 +4,9 @@ module
 
 public import SptClassification.Arithmetic.Sieve.ClassificationBlocks
 
+-- Build-order dependency: keep at most two large certificate modules in flight.
+import SptClassification.Arithmetic.Sieve.Certificates.Intervals.Blocks46080To48128
+
 /-! # Certified checker blocks from 50176 through 52223 -/
 
 public section
