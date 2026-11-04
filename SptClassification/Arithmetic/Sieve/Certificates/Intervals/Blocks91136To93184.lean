@@ -10,37 +10,152 @@ public section
 
 namespace SptClassification.Sieve
 
+-- Bound memory by checking small certificate pieces sequentially.
+set_option Elab.async false
+
+private theorem checkBlocks_91136_91199_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91136 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91136_91199_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91168 + i.val) = true := by
+  decide +kernel
+
 private theorem checkBlocks_91136_91199 :
     ∀ i : Fin 64, indexedBlockCheck (91136 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91136 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91136 0 32 h0 checkBlocks_91136_91199_part0
+  have h64 := extendCertifiedSegment 91136 32 32 h32 checkBlocks_91136_91199_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91200_91263_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91200 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91200_91263_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91232 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91200_91263 :
     ∀ i : Fin 64, indexedBlockCheck (91200 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91200 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91200 0 32 h0 checkBlocks_91200_91263_part0
+  have h64 := extendCertifiedSegment 91200 32 32 h32 checkBlocks_91200_91263_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91264_91327_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91264 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91264_91327_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91296 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91264_91327 :
     ∀ i : Fin 64, indexedBlockCheck (91264 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91264 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91264 0 32 h0 checkBlocks_91264_91327_part0
+  have h64 := extendCertifiedSegment 91264 32 32 h32 checkBlocks_91264_91327_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91328_91391_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91328 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91328_91391_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91360 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91328_91391 :
     ∀ i : Fin 64, indexedBlockCheck (91328 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91328 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91328 0 32 h0 checkBlocks_91328_91391_part0
+  have h64 := extendCertifiedSegment 91328 32 32 h32 checkBlocks_91328_91391_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91392_91455_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91392 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91392_91455_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91424 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91392_91455 :
     ∀ i : Fin 64, indexedBlockCheck (91392 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91392 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91392 0 32 h0 checkBlocks_91392_91455_part0
+  have h64 := extendCertifiedSegment 91392 32 32 h32 checkBlocks_91392_91455_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91456_91519_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91456 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91456_91519_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91488 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91456_91519 :
     ∀ i : Fin 64, indexedBlockCheck (91456 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91456 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91456 0 32 h0 checkBlocks_91456_91519_part0
+  have h64 := extendCertifiedSegment 91456 32 32 h32 checkBlocks_91456_91519_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91520_91583_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91520 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91520_91583_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91552 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91520_91583 :
     ∀ i : Fin 64, indexedBlockCheck (91520 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91520 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91520 0 32 h0 checkBlocks_91520_91583_part0
+  have h64 := extendCertifiedSegment 91520 32 32 h32 checkBlocks_91520_91583_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91584_91647_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91584 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91584_91647_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91616 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91584_91647 :
     ∀ i : Fin 64, indexedBlockCheck (91584 + i.val) = true := by
-  decide +kernel
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91584 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91584 0 32 h0 checkBlocks_91584_91647_part0
+  have h64 := extendCertifiedSegment 91584 32 32 h32 checkBlocks_91584_91647_part1
+  intro i
+  exact h64 i.val i.isLt
 
 private theorem checkBlocks_91136_91647 :
     ∀ i : Fin 512, indexedBlockCheck (91136 + i.val) = true := by
@@ -58,37 +173,149 @@ private theorem checkBlocks_91136_91647 :
   intro i
   exact h512 i.val i.isLt
 
+private theorem checkBlocks_91648_91711_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91648 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91648_91711_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91680 + i.val) = true := by
+  decide +kernel
+
 private theorem checkBlocks_91648_91711 :
     ∀ i : Fin 64, indexedBlockCheck (91648 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91648 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91648 0 32 h0 checkBlocks_91648_91711_part0
+  have h64 := extendCertifiedSegment 91648 32 32 h32 checkBlocks_91648_91711_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91712_91775_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91712 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91712_91775_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91744 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91712_91775 :
     ∀ i : Fin 64, indexedBlockCheck (91712 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91712 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91712 0 32 h0 checkBlocks_91712_91775_part0
+  have h64 := extendCertifiedSegment 91712 32 32 h32 checkBlocks_91712_91775_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91776_91839_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91776 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91776_91839_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91808 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91776_91839 :
     ∀ i : Fin 64, indexedBlockCheck (91776 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91776 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91776 0 32 h0 checkBlocks_91776_91839_part0
+  have h64 := extendCertifiedSegment 91776 32 32 h32 checkBlocks_91776_91839_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91840_91903_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91840 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91840_91903_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91872 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91840_91903 :
     ∀ i : Fin 64, indexedBlockCheck (91840 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91840 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91840 0 32 h0 checkBlocks_91840_91903_part0
+  have h64 := extendCertifiedSegment 91840 32 32 h32 checkBlocks_91840_91903_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91904_91967_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91904 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91904_91967_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (91936 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91904_91967 :
     ∀ i : Fin 64, indexedBlockCheck (91904 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91904 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91904 0 32 h0 checkBlocks_91904_91967_part0
+  have h64 := extendCertifiedSegment 91904 32 32 h32 checkBlocks_91904_91967_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_91968_92031_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (91968 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_91968_92031_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92000 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_91968_92031 :
     ∀ i : Fin 64, indexedBlockCheck (91968 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (91968 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 91968 0 32 h0 checkBlocks_91968_92031_part0
+  have h64 := extendCertifiedSegment 91968 32 32 h32 checkBlocks_91968_92031_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92032_92095_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92032 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92032_92095_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92064 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92032_92095 :
     ∀ i : Fin 64, indexedBlockCheck (92032 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92032 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92032 0 32 h0 checkBlocks_92032_92095_part0
+  have h64 := extendCertifiedSegment 92032 32 32 h32 checkBlocks_92032_92095_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92096_92159_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92096 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92096_92159_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92128 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92096_92159 :
     ∀ i : Fin 64, indexedBlockCheck (92096 + i.val) = true := by
-  decide +kernel
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92096 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92096 0 32 h0 checkBlocks_92096_92159_part0
+  have h64 := extendCertifiedSegment 92096 32 32 h32 checkBlocks_92096_92159_part1
+  intro i
+  exact h64 i.val i.isLt
 
 private theorem checkBlocks_91648_92159 :
     ∀ i : Fin 512, indexedBlockCheck (91648 + i.val) = true := by
@@ -106,37 +333,149 @@ private theorem checkBlocks_91648_92159 :
   intro i
   exact h512 i.val i.isLt
 
+private theorem checkBlocks_92160_92223_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92160 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92160_92223_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92192 + i.val) = true := by
+  decide +kernel
+
 private theorem checkBlocks_92160_92223 :
     ∀ i : Fin 64, indexedBlockCheck (92160 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92160 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92160 0 32 h0 checkBlocks_92160_92223_part0
+  have h64 := extendCertifiedSegment 92160 32 32 h32 checkBlocks_92160_92223_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92224_92287_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92224 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92224_92287_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92256 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92224_92287 :
     ∀ i : Fin 64, indexedBlockCheck (92224 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92224 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92224 0 32 h0 checkBlocks_92224_92287_part0
+  have h64 := extendCertifiedSegment 92224 32 32 h32 checkBlocks_92224_92287_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92288_92351_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92288 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92288_92351_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92320 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92288_92351 :
     ∀ i : Fin 64, indexedBlockCheck (92288 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92288 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92288 0 32 h0 checkBlocks_92288_92351_part0
+  have h64 := extendCertifiedSegment 92288 32 32 h32 checkBlocks_92288_92351_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92352_92415_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92352 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92352_92415_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92384 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92352_92415 :
     ∀ i : Fin 64, indexedBlockCheck (92352 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92352 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92352 0 32 h0 checkBlocks_92352_92415_part0
+  have h64 := extendCertifiedSegment 92352 32 32 h32 checkBlocks_92352_92415_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92416_92479_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92416 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92416_92479_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92448 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92416_92479 :
     ∀ i : Fin 64, indexedBlockCheck (92416 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92416 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92416 0 32 h0 checkBlocks_92416_92479_part0
+  have h64 := extendCertifiedSegment 92416 32 32 h32 checkBlocks_92416_92479_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92480_92543_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92480 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92480_92543_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92512 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92480_92543 :
     ∀ i : Fin 64, indexedBlockCheck (92480 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92480 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92480 0 32 h0 checkBlocks_92480_92543_part0
+  have h64 := extendCertifiedSegment 92480 32 32 h32 checkBlocks_92480_92543_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92544_92607_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92544 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92544_92607_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92576 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92544_92607 :
     ∀ i : Fin 64, indexedBlockCheck (92544 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92544 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92544 0 32 h0 checkBlocks_92544_92607_part0
+  have h64 := extendCertifiedSegment 92544 32 32 h32 checkBlocks_92544_92607_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92608_92671_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92608 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92608_92671_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92640 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92608_92671 :
     ∀ i : Fin 64, indexedBlockCheck (92608 + i.val) = true := by
-  decide +kernel
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92608 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92608 0 32 h0 checkBlocks_92608_92671_part0
+  have h64 := extendCertifiedSegment 92608 32 32 h32 checkBlocks_92608_92671_part1
+  intro i
+  exact h64 i.val i.isLt
 
 private theorem checkBlocks_92160_92671 :
     ∀ i : Fin 512, indexedBlockCheck (92160 + i.val) = true := by
@@ -154,37 +493,149 @@ private theorem checkBlocks_92160_92671 :
   intro i
   exact h512 i.val i.isLt
 
+private theorem checkBlocks_92672_92735_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92672 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92672_92735_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92704 + i.val) = true := by
+  decide +kernel
+
 private theorem checkBlocks_92672_92735 :
     ∀ i : Fin 64, indexedBlockCheck (92672 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92672 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92672 0 32 h0 checkBlocks_92672_92735_part0
+  have h64 := extendCertifiedSegment 92672 32 32 h32 checkBlocks_92672_92735_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92736_92799_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92736 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92736_92799_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92768 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92736_92799 :
     ∀ i : Fin 64, indexedBlockCheck (92736 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92736 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92736 0 32 h0 checkBlocks_92736_92799_part0
+  have h64 := extendCertifiedSegment 92736 32 32 h32 checkBlocks_92736_92799_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92800_92863_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92800 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92800_92863_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92832 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92800_92863 :
     ∀ i : Fin 64, indexedBlockCheck (92800 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92800 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92800 0 32 h0 checkBlocks_92800_92863_part0
+  have h64 := extendCertifiedSegment 92800 32 32 h32 checkBlocks_92800_92863_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92864_92927_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92864 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92864_92927_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92896 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92864_92927 :
     ∀ i : Fin 64, indexedBlockCheck (92864 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92864 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92864 0 32 h0 checkBlocks_92864_92927_part0
+  have h64 := extendCertifiedSegment 92864 32 32 h32 checkBlocks_92864_92927_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92928_92991_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92928 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92928_92991_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (92960 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92928_92991 :
     ∀ i : Fin 64, indexedBlockCheck (92928 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92928 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92928 0 32 h0 checkBlocks_92928_92991_part0
+  have h64 := extendCertifiedSegment 92928 32 32 h32 checkBlocks_92928_92991_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_92992_93055_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (92992 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_92992_93055_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (93024 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_92992_93055 :
     ∀ i : Fin 64, indexedBlockCheck (92992 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (92992 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 92992 0 32 h0 checkBlocks_92992_93055_part0
+  have h64 := extendCertifiedSegment 92992 32 32 h32 checkBlocks_92992_93055_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_93056_93119_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (93056 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_93056_93119_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (93088 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_93056_93119 :
     ∀ i : Fin 64, indexedBlockCheck (93056 + i.val) = true := by
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (93056 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 93056 0 32 h0 checkBlocks_93056_93119_part0
+  have h64 := extendCertifiedSegment 93056 32 32 h32 checkBlocks_93056_93119_part1
+  intro i
+  exact h64 i.val i.isLt
+
+private theorem checkBlocks_93120_93183_part0 :
+    ∀ i : Fin 32, indexedBlockCheck (93120 + i.val) = true := by
+  decide +kernel
+
+private theorem checkBlocks_93120_93183_part1 :
+    ∀ i : Fin 32, indexedBlockCheck (93152 + i.val) = true := by
   decide +kernel
 
 private theorem checkBlocks_93120_93183 :
     ∀ i : Fin 64, indexedBlockCheck (93120 + i.val) = true := by
-  decide +kernel
+  have h0 : ∀ i : ℕ, i < 0 → indexedBlockCheck (93120 + i) = true := by
+    intro i hi
+    omega
+  have h32 := extendCertifiedSegment 93120 0 32 h0 checkBlocks_93120_93183_part0
+  have h64 := extendCertifiedSegment 93120 32 32 h32 checkBlocks_93120_93183_part1
+  intro i
+  exact h64 i.val i.isLt
 
 private theorem checkBlocks_92672_93183 :
     ∀ i : Fin 512, indexedBlockCheck (92672 + i.val) = true := by
