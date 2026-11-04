@@ -23,7 +23,7 @@ its content multiplies its discriminant by the square of that content.
 We use the integral form convention of [ahlgrenAndersen2016], section 2.1.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

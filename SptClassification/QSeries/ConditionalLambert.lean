@@ -15,7 +15,7 @@ equations (L) and (J)]. The differential relation is conditional only on
 the finite product constant terms specified in `ConstantTermInputs`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

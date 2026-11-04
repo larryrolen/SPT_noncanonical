@@ -15,7 +15,7 @@ algebra; it does not have a restriction map to `ZMod 6`.
 We follow the algebraic step of [rolen2026canonical], Lemma 5.2.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 namespace ConditionalCM

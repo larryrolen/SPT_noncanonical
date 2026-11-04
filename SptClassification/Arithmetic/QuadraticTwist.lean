@@ -23,7 +23,7 @@ all negative square indices, including indices divisible by the prime.
 * `legendreSym_mul_square`: multiplication by a nonzero square preserves the symbol.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

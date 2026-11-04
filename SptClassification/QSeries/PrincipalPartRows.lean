@@ -17,7 +17,7 @@ The construction is coefficientwise and integral. Identification of `U` and
 `J` with the analytic eta and modular invariant remains a separate bridge.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

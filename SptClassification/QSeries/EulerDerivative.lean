@@ -11,7 +11,7 @@ The operator `X * d/dX` multiplies the coefficient of `X^n` by `n`. This is
 the ordinary integral-exponent normalization used for the Lambert lifts.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

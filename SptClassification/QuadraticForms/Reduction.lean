@@ -14,7 +14,7 @@ The inversion matrix shows that the last coefficient is at least the first.
 The resulting bounds will make the orbit space finite.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.BinaryQuadraticForm
 

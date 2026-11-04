@@ -1,0 +1,31 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "SptClassification.Palomar.conditional_noncanonical_exclusion",
+    "SptClassification.Palomar.conditional_simple_congruence_classification",
+    "SptClassification.BinaryQuadraticForm.transform_a_pos",
+    "SptClassification.BinaryQuadraticForm.discriminant_transform",
+    "SptClassification.PositiveForm.transform_mul",
+    "SptClassification.PositiveForm.transform_one",
+    "SptClassification.PositiveForm.toBinaryQuadraticForm_smul",
+    "SptClassification.BinaryQuadraticForm.content_transform",
+    "SptClassification.BinaryQuadraticForm.pullback_a_pos",
+    "SptClassification.BinaryQuadraticForm.discriminant_pullback",
+    "SptClassification.BinaryQuadraticForm.six_dvd_pullback_a",
+    "SptClassification.BinaryQuadraticForm.pullback_b_residue",
+    "SptClassification.LevelSixForm.transform_mul",
+    "SptClassification.LevelSixForm.transform_one",
+    "SptClassification.LevelSixForm.content_smul",
+    "SptClassification.primitiveCMClassFinite",
+    "SptClassification.LevelSixForm.cmPoint_smul",
+    "SptClassification.levelSixEtaQuotient_gamma0",
+    "SptClassification.eisensteinWeightMinus_ge_three",
+    "SptClassification.eisensteinWeightPlus_ge_three"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

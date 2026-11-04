@@ -17,7 +17,7 @@ coefficient sequences with exactly the pole required in the manuscript
 proof obligations.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

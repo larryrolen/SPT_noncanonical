@@ -16,7 +16,7 @@ The elementary residue calculation and the exclusions at two and three
 are proved for the actual partition-based `spt`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

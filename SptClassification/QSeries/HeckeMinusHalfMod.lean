@@ -14,7 +14,7 @@ an intrinsic reduction of the second coefficient in
 [rolen2026canonical], Section 3, including repeated prime factors.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

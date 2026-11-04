@@ -13,7 +13,7 @@ show that transforming an upper-half-plane root gives a root of the transformed
 form. Uniqueness of that root proves equivariance of the CM-point construction.
 -/
 
-public section
+@[expose] public section
 
 open scoped MatrixGroups
 

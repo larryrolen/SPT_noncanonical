@@ -15,7 +15,7 @@ indices. The Euler derivative on exponents `r/24` intertwines the two weight
 normalizations. These are coefficient identities; modularity is a separate fact.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

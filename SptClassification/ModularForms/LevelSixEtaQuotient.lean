@@ -16,7 +16,7 @@ upper half-plane. Its identification with an integral modular-curve coordinate
 requires additional geometric results.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

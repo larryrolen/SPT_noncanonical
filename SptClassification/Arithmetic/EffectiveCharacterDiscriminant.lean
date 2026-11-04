@@ -15,7 +15,7 @@ trevino2017]. The arithmetic deductions below follow the normalization in
 [rolenManuscript], §5, equation `eq:character`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

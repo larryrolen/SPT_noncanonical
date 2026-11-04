@@ -17,7 +17,7 @@ the integral leading coefficient required for row reduction; the analytic
 identity with the Klein invariant is a separate obligation.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

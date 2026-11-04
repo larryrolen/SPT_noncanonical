@@ -14,7 +14,7 @@ unmarked count isolates precisely its contribution to the smallest-parts functio
 We follow the smallest-part decomposition in [andrews2008].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

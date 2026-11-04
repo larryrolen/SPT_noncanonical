@@ -21,7 +21,7 @@ deduction, including the prime-dividing-progression-modulus case, is proved
 here. Availability of the analytic inputs is a later task.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 
@@ -229,6 +229,9 @@ structure SptTwistedAnalyticData (Q : ℕ) [Fact Q.Prime] where
   serreDerivativeP_eq : ∀ τ : UpperHalfPlane,
     serreDerivativeP τ = thetaTwistedP τ + eisensteinTwo τ * twistedP τ / 24
 
+/-- Explicit lower bounds used in the two Eisenstein-series parameters. -/
+theorem eisensteinWeightMinus_ge_three (p : ℕ) (hfive : 5 ≤ p) : 3 ≤ p - 1 := by omega
+theorem eisensteinWeightPlus_ge_three (p : ℕ) (hfive : 5 ≤ p) : 3 ≤ p + 1 := by omega
 /-- Data for the exact normalized approximation
 `E_(p-1) (M_Q - D_(-1/2) P_Q / 12) + E_(p+1) P_Q / 288`.
 The analytic rows are independent of the prime of reduction. Modularity and
@@ -242,9 +245,9 @@ structure SptModularApproximation (p Q : ℕ) (hfive : 5 ≤ p) [Fact Q.Prime]
   level_divides : form.level ∣ 576 * Q ^ 4
   normalized_representative : ∀ τ : UpperHalfPlane,
     form.toFun τ =
-      ModularForm.E (k := p - 1) (by omega) τ *
+      ModularForm.E (k := p - 1) (eisensteinWeightMinus_ge_three p hfive) τ *
         (twistedM τ - serreDerivativeP τ / 12) +
-        ModularForm.E (k := p + 1) (by omega) τ * twistedP τ / 288
+        ModularForm.E (k := p + 1) (eisensteinWeightPlus_ge_three p hfive) τ * twistedP τ / 288
 
 /-- The analytic `E₂` in an approximation sums the integral formal row. -/
 theorem SptModularApproximation.eisensteinTwoSeries_hasSum {p Q : ℕ}
