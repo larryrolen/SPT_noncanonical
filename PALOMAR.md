@@ -41,10 +41,13 @@ Synchronous elaboration releases each computation's reduction state before the
 next piece. This prevents a single certificate compiler from exhausting the
 standard worker's memory.
 
-The Solution's 237 local dependency modules are assigned to 119 Lake library
-batches of at most two modules. Each batch uses Lake's ordinary `needs`
-dependency on the preceding batch, which Lake awaits before processing modules.
-This also bounds concurrent project compilations without adding Lean imports.
+The Solution's 237 local dependency modules are assigned to 121 Lake library
+batches of at most two independent modules. Each batch waits for its predecessor.
+Ready certificate intervals take priority, allowing pairs of independent heavy
+checks to run concurrently. Dependent cumulative-certificate wrappers are built
+only after their inputs. This avoids pairing each costly interval with its
+wrapper, which would serialize the interval checks. No Lean import, theorem,
+proof term, or checker is changed by this scheduling adjustment.
 Run `python3 scripts/update_palomar_build.py` after changing imports to regenerate
 the build plan.
 
