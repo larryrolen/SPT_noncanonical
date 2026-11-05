@@ -17,7 +17,7 @@ or three vanish by the character; terms divisible by `p` are killed by the
 outer Euler derivative.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

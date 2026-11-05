@@ -17,7 +17,7 @@ discriminant and the content are invariant under this action.
 The left-action convention follows [ahlgrenAndersen2016], equation (2.2).
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.BinaryQuadraticForm
 

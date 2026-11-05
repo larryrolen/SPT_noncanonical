@@ -22,7 +22,7 @@ The empty partition contributes zero.
 We follow [andrews2008].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -1,0 +1,90 @@
+# Metadata for the explicitly conditional Palomar endpoints.
+# The original manuscript-facing declarations retain their disclosed admissions.
+version: v0.4
+project:
+  name: "Ramanujan-type congruences for the smallest parts function, conditional on literature inputs"
+  description: >-
+    This development formalizes the exclusion of noncanonical prime-modulus
+    Ramanujan-type congruences for Andrews' smallest-parts function, relative
+    to explicit analytic, arithmetic, and geometric inputs. Under those
+    inputs, a congruence spt(p*n+b) = 0 modulo p for every nonnegative n,
+    with p prime, p at least five, and 0 <= b < p, forces 24*b = 1 modulo p.
+    With canonical-classification and Andrews-congruence inputs, the
+    conditional classification holds for every prime: the only pairs are
+    (5,4), (7,5), and (13,6). The submitted endpoints use explicit
+    hypotheses, including E_(p-1) congruent to 1 and E_(p+1) congruent to E_2.
+    The original manuscript-facing declarations rely on
+    admitted literature statements and are not unconditional kernel-checked
+    proofs of the classification.
+  authors:
+    - Larry Rolen
+  responsible_maintainers:
+    - Larry Rolen
+  license: MIT
+sources:
+  - title: "Ramanujan-type congruences for the smallest parts function"
+    authors:
+      - Larry Rolen
+    id: "https://arxiv.org/abs/2611.04178v1"
+    type: paper
+    location: "Theorem 1.1 and Corollary 1.2, with supporting arguments"
+    relationship: formalizes
+    note: >-
+      The proposed registration concerns the new Palomar conditional exports.
+      ASSUMPTIONS.md records the named literature inputs and qualifications.
+  - title: "Class polynomial obstructions to canonical congruences for the smallest parts function"
+    authors:
+      - Larry Rolen
+    id: "https://arxiv.org/abs/2610.27145v1"
+    type: paper
+    location: "Theorem 1.1"
+    relationship: background
+    note: >-
+      Canonical necessity is an external premise for the full classification;
+      this entry does not independently verify that premise.
+classification:
+  arxiv:
+    - math.NT
+  msc2020:
+    - 11P83
+    - 11F37
+status:
+  scope: >-
+    Endpoints: SptClassification.Palomar.conditional_noncanonical_exclusion
+    and SptClassification.Palomar.conditional_simple_congruence_classification.
+    The repository records 62 literature admissions in the main library;
+    the complete repository snapshot contains an additional duplicate
+    admission in SPT_noncanonical/EffectiveCharacterDiscriminant.lean.
+    The original conditional endpoints additionally depend on two admitted
+    Eisenstein-series congruences. The Palomar endpoints make those two
+    statements explicit hypotheses and substitute them into the existing
+    proof terms. The upgraded Solution builds and its axiom audit contains only propext,
+    Classical.choice, and Quot.sound. The local statement and reachable-definition
+    comparison passes. The full Palomar workflow report for
+    the submitted commit records the independent verification result.
+automation:
+  methods:
+    - method: autonomous
+      framework: AxiomProver
+      tool_setup: "The paper and repository attribute the Lean formalization to AxiomProver."
+    - method: agent
+      framework: Codex
+      tool_setup: "Lean upgrade, module-system compatibility fixes, standalone statement preparation, lifting two admitted literature facts into explicit hypotheses, and kernel axiom audits."
+  notes: >-
+    Model versions, compute budgets, and prompt logs for AxiomProver have not
+    been supplied. The paper acknowledges Connor Olson and Ken Ono for
+    assistance with autoformalization.
+fidelity:
+  divergences: >-
+    The endpoints retain EisensteinCongruenceInputs,
+    CharacterIntervalInput, ConstantTermInputs,
+    ProgressionInputs, CharacterObstructionInputFamily, and, for the full
+    classification, CanonicalInputs as explicit premises. Their definitions
+    are exposed in the Challenge. The selected conditional endpoints have
+    no sorryAx dependency in the local Lean axiom audit.
+review:
+  status: unchecked
+  notes: >-
+    Codex inspected repository structure, theorem signatures, and the
+    assumption register. This is not a proof or alignment certification.
+    Any prior human review of the formalization has not been established.

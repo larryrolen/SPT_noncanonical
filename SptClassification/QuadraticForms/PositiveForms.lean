@@ -13,7 +13,7 @@ Reduced forms have coefficients in explicit finite integer intervals. Reduction
 makes their map onto the full modular-group orbit space surjective.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

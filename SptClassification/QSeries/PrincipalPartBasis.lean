@@ -15,7 +15,7 @@ coefficient sequence with precisely one pole. The analytic identification
 separate prerequisites for the manuscript's forms `H_d` and `K_d`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

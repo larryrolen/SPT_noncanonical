@@ -11,7 +11,7 @@ import Mathlib.Tactic.LinearCombination
 We follow [ahlgrenAndersen2016], section 2.1.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

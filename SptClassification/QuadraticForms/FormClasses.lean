@@ -12,7 +12,7 @@ Proper equivalence is the actual `SL(2, ℤ)` orbit relation. The class number
 counts the classes of content one, with each class counted once.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

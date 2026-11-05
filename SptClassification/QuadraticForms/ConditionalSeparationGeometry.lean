@@ -15,7 +15,7 @@ rank-four sublattices. No separation inequality is an input.
 We follow [rolen2026canonical], section 4 and Lemma 5.2.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 namespace ConditionalCM

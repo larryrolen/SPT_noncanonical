@@ -14,7 +14,7 @@ constant coefficient is separate. The coefficient formulas below implement
 the algebra in [rolenManuscript], Section 3, equations `eq:ct1` and `eq:ct2`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

@@ -17,7 +17,7 @@ Its comparison with the Jacobi symbol fixes the normalization used in the eta
 and lift coefficient formulas. We follow [ahlgrenAndersen2016], section 3.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -20,7 +20,7 @@ These are explicit good-reduction inputs, not existence assertions. See
 [katz1973, Sections 2 and 4.3].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

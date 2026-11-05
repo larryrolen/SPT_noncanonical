@@ -8,7 +8,7 @@ public import SptClassification.ModularForms.EtaQuotientCuspHalf
 
 /-! # Full Γ₀(6) invariance of the explicit eta quotient -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

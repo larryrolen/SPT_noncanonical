@@ -17,7 +17,7 @@ their degrees with the proper class number are additional mathematical results.
 We follow the class-polynomial construction in [rolen2026canonical], section4.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -17,7 +17,7 @@ classes, remains in the quotient.
 See [ahlgrenAndersen2016], sections 1 and 2.1.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

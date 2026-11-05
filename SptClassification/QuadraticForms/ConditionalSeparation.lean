@@ -18,7 +18,7 @@ of their reductions yields the level-six CM actions represented by
 The companion argument is [rolen2026canonical, Lemma 5.2].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 namespace ConditionalCM

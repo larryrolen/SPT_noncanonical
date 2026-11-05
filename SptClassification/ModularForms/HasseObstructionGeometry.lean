@@ -18,7 +18,7 @@ the normalization of [rolenManuscript, Section 4, equations (product) and
 as used in [rolenManuscript, Section 4].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

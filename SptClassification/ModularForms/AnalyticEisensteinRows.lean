@@ -14,7 +14,7 @@ the rational Bernoulli/divisor-sum coefficients in Mathlib's q-expansion
 before any reduction modulo a prime.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -13,7 +13,7 @@ inputs to the coefficient argument of [rolenManuscript, §3, Lemma 3.1].
 Their quantifiers are independent of a quadratic-character class.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

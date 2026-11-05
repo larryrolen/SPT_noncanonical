@@ -16,7 +16,7 @@ This gives a certificate-checking interface for efficient finite computation,
 independent of the small-index multiset enumerator.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

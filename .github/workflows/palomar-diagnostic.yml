@@ -1,0 +1,63 @@
+name: Palomar build memory diagnostic
+
+on:
+  push:
+    branches: [codex/palomar-submission]
+    paths: [.github/workflows/palomar-diagnostic.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Free disk space
+        uses: jlumbroso/free-disk-space@54081f138730dfa15788a46383842cd2f914a1be
+        with:
+          tool-cache: false
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: false
+          docker-images: true
+          swap-storage: false
+      - name: Install pinned elan and submitted Lean
+        run: |
+          curl --fail --location --silent --show-error https://github.com/leanprover/elan/releases/download/v4.2.3/elan-x86_64-unknown-linux-gnu.tar.gz --output "$RUNNER_TEMP/elan.tar.gz"
+          echo "df0b2b3a439961ffcbb3985214365ffe40f49bc871df04dff268c7d8e21ca8b2  $RUNNER_TEMP/elan.tar.gz" | sha256sum -c -
+          mkdir "$RUNNER_TEMP/elan"
+          tar -xzf "$RUNNER_TEMP/elan.tar.gz" -C "$RUNNER_TEMP/elan"
+          "$RUNNER_TEMP/elan/elan-init" -y --no-modify-path --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          "$HOME/.elan/bin/elan" toolchain install "$(cat lean-toolchain)"
+      - name: Fetch pinned Mathlib cache
+        run: lake exe cache get
+      - name: Build with process and memory observations
+        run: |
+          set +e
+          lake -v build Solution > build.log 2>&1 &
+          build_pid=$!
+          while kill -0 "$build_pid" 2>/dev/null; do
+            date -u
+            free -m
+            ps -eo pid,ppid,rss,pcpu,args --sort=-rss | awk 'NR == 1 || /\/lean |\/lake /' | head -n 16
+            tail -n 8 build.log
+            sleep 30
+          done
+          wait "$build_pid"
+          result=$?
+          tail -n 120 build.log
+          exit "$result"
+      - name: Preserve diagnostic build log
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        with:
+          name: palomar-build-diagnostic
+          path: build.log
+          if-no-files-found: warn

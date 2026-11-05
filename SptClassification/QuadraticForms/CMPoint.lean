@@ -19,7 +19,7 @@ root of the form evaluated at `(z,1)`.
 We follow [ahlgrenAndersen2016], section 1.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -14,7 +14,7 @@ All principal-part statements concern the actual coefficient functions at
 exponents `r/24`. We follow [rolenManuscript], Section 3.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

@@ -21,7 +21,7 @@ term `q^(1/24-k)`; for the derivative rows it means `q^(1/24-(k+1))`.
 Indices outside the nonnegative pole range retain the other Fourier terms.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

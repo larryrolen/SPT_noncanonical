@@ -14,7 +14,7 @@ smallest-parts series `S`, and `f = -12 S - 24 Θ P`.  An index outside
 `-1`. We follow the normalization in [rolenManuscript].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 

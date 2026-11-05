@@ -14,7 +14,7 @@ relation lets finite Fourier convolutions be reduced without assigning a
 nonexistent map from all of `ℚ` to `ZMod p`.
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification
 

@@ -13,7 +13,7 @@ has the extra pole shift. These are the coefficients in
 [rolenManuscript, §3, equations (H) and (K)].
 -/
 
-public section
+@[expose] public section
 
 namespace SptClassification.QSeries
 
